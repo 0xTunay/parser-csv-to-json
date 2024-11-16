@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    std::cout << "hello csv" << std::endl;
+    std::cout << "hello CSV" << std::endl;
 
     return 0;
 }
