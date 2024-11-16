@@ -7,7 +7,7 @@
 ## Features
 
 - Converts CSV files with headers to JSON format
-- Lightweight and fast, written in pure C. OR C++. TBD
+- Lightweight and fast, written in pure C++. TBD
 - Supports various delimiters
 - Handles basic data validation
 - Output can be saved directly to a file
