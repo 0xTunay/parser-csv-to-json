@@ -1,8 +1,8 @@
-#include <XLConstants.hpp>
+#include <OpenXLSX.hpp>
 
 using namespace OpenXLSX;
 
-int main(void) {
+int main() {
 
     XLDocument doc;
     doc.create("Spreadsheet.xlsx");
