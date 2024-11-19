@@ -1,7 +1,7 @@
-#include "../OpenXLSX/OpenXLSX/headers/XLConstants.hpp"
+
 #include <iostream>
 
-int main(void) {
+int main() {
 
     
     std::cout << "hi xlsx" << std::endl;
