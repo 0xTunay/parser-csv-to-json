@@ -1,16 +1,10 @@
-#include <XLConstants.hpp>
-
-using namespace OpenXLSX;
+#include "../OpenXLSX/OpenXLSX/headers/XLConstants.hpp"
+#include <iostream>
 
 int main(void) {
 
-    XLDocument doc;
-    doc.create("Spreadsheet.xlsx");
-    auto wks = doc.workbook().worksheet("Sheet1");
+    
+    std::cout << "hi xlsx" << std::endl;
 
-    wks.cell("A1").value() = "Hello, OpenXLSX!";
-
-    doc.save();
-
-    return 0;
+    return 0;   
 }
