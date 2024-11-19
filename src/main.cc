@@ -1,10 +1,12 @@
 
 #include <iostream>
 
-int main() {
+#include "../include/rapidcsv.h"
+
+int main(void) {
 
     
-    std::cout << "hi xlsx" << std::endl;
+    std::cout << "lets go parsing csv" << std::endl;
 
     return 0;   
 }
