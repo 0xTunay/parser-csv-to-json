@@ -3,12 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 project(parser-csv-to-json)
 
 set(CMAKE_CXX_STANDARD 23)
-
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
-
-add_subdirectory(OpenXLSX)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SRC
     src/parseCSV.cc
@@ -16,17 +11,19 @@ set(SRC
 )
 
 set(INCLUDE
-    include/parceCSV.hpp
+    include/parseCSV.hpp
     include/writeJSON.hpp
+    include/rapidcsv.h
 )
 
-add_library(core
+add_library(core STATIC
     ${SRC}
-    ${CORE_SRC}
 )
+
+target_include_directories(core PUBLIC include)
 
 add_executable(parser-csv-to-json
     src/main.cc
 )
 
-target_link_libraries(parser-csv-to-json OpenXLSX::OpenXLSX core)
+target_link_libraries(parser-csv-to-json PRIVATE core)
