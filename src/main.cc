@@ -5,8 +5,12 @@
 
 int main(void) {
 
-    
-    std::cout << "lets go parsing csv" << std::endl;
+  rapidcsv::Document doc("../ex.csv", rapidcsv::LabelParams(-1, -1));
 
-    return 0;   
-}
+  std::vector<float> close = doc.GetColumn<float>(5);
+  std::cout << "Read " << close.size() << " values." << std::endl;
+
+  long long volume = doc.GetCell<long long>(4, 2);
+  std::cout << "Volume " << volume << " on 2017-02-22." << std::endl;
+  
+  }
