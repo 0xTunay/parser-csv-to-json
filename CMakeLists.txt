@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
+# Название проекта
 project(parser-csv-to-json)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -13,18 +14,17 @@ set(SRC
 set(INCLUDE
     include/parseCSV.hpp
     include/writeJSON.hpp
-    include/rapidcsv.h
 )
 
-add_library(core STATIC
-    ${SRC}
-)
+add_library(core STATIC ${SRC})
 
 target_include_directories(core PUBLIC include)
 
-add_executable(parser-csv-to-json
-    src/main.cc
-)
+add_library(rapidcsv INTERFACE)
+target_include_directories(rapidcsv INTERFACE external/rapidcsv)
+
+target_link_libraries(core PUBLIC rapidcsv)
+
+add_executable(parser-csv-to-json src/main.cc)
 
 target_link_libraries(parser-csv-to-json PRIVATE core)
-
