@@ -27,3 +27,4 @@ add_executable(parser-csv-to-json
 )
 
 target_link_libraries(parser-csv-to-json PRIVATE core)
+
