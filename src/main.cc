@@ -3,8 +3,6 @@
 
 #include "../include/parceCSV.hpp"
 
-
-
 int main(int argc,char *argv[]) {
 
   if(argc < 3 ){
@@ -12,10 +10,13 @@ int main(int argc,char *argv[]) {
     return 1;
   }
 
-  const str csvFile = argv[1];
-  const str jsonFIle = argv[2];
+  try {
+        csv_parser(argv[1], argv[2]);
+    } catch (const std::exception &ex) {
+        std::cerr << "Ошибка: " << ex.what() << std::endl;
+        return 1;
+    }
 
-  csv_parser(csvFile,jsonFIle);
   return 0;
   
 }
