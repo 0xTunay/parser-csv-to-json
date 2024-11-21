@@ -1,6 +1,10 @@
 #ifndef PARCECSV_H
 #define PARCECSV_H
 
-char csv_parser(const char *line);
+#include <string>
+
+using str = std::string;
+
+void csv_parser(const str &csvFILE, const str &jsonFile);
 
 #endif // PARCECSV_H

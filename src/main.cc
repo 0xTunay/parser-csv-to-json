@@ -1,16 +1,21 @@
-
 #include <iostream>
+#include <string.h>
 
-#include "../external/repidcsv/src/repidcsv.h"
+#include "../include/parceCSV.hpp"
 
-int main(void) {
 
-  rapidcsv::Document doc("../example.csv", rapidcsv::LabelParams(-1, -1));
 
-  std::vector<float> close = doc.GetColumn<float>(5);
-  std::cout << "Read " << close.size() << " values." << std::endl;
+int main(int argc,char *argv[]) {
 
-  long long volume = doc.GetCell<long long>(4, 2);
-  std::cout << "Volume " << volume << " on 2017-02-22." << std::endl;
+  if(argc < 3 ){
+    std::cerr << "using " << argv[0] << "input.csv --> output.json";
+    return 1;
+  }
+
+  const str csvFile = argv[1];
+  const str jsonFIle = argv[2];
+
+  csv_parser(csvFile,jsonFIle);
+  return 0;
   
 }
