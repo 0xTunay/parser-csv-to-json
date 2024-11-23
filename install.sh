@@ -2,5 +2,5 @@
 cd build || mkdir -p build && cd build
 cmake ..
 make
-./parser-csv-to-json
+./build/parser-csv-to-json
 cd ..
