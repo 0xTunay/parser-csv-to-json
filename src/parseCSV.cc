@@ -26,7 +26,6 @@ void csv_parser(const str &csvFILE,const str &jsonFile){
   Json::Value json_data(Json::arrayValue);
 
 
-
   for (size_t row = 0; row < doc->GetRowCount(); ++row){
     for (size_t col = 0; col < headers.size(); ++col)   {
       Json::Value json_row(Json::objectValue);

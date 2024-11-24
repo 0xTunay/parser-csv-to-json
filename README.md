@@ -11,8 +11,10 @@
 - Supports various delimiters
 - Handles basic data validation
 - Output can be saved directly to a file
-
+- you need install json lib, fiefox help you
 
 ## todo
-- Start write code
 - try sumbodule 
+- end write code 
+- fix code 
+
